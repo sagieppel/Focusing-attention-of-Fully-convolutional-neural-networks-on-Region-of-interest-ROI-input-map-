@@ -56,5 +56,5 @@ The net is based on fully convolutional neural net described in the paper [Fully
 https://github.com/shekkizh/FCN.tensorflow by Sarath Shekkizhar with MIT license. The net is based on the pre-trained VGG16 model by Marvin Teichmann
 
 ## Supporting datasets
-The net was tested on a dataset of annotated images of materials in glass vessels. The glass vessel region in the image was taken as the ROI map.
+The net was tested on a [dataset of annotated images of materials in glass vessels](https://github.com/sagieppel/Materials-in-Vessels-data-set). The glass vessel region in the image was taken as the ROI map.
 This dataset can be downloaded from  https://drive.google.com/file/d/0B6njwynsu2hXRFpmY1pOV1A4SFE/view?usp=sharing
