@@ -10,7 +10,8 @@
 #    Vgg16 pretrained Model can be download from ftp://mi.eng.cam.ac.uk/pub/mttt2/models/vgg16.npy
 #    or https://drive.google.com/file/d/0B6njwynsu2hXZWcwX0FKTGJKRWs/view?usp=sharing
 # e) Set number of classes number in NUM_CLASSES
-# f) Run scripty
+# g) If you are interested in using validation set during training set UseValidationSet=True and the validation image folder to Valid_Image_Dir (asume that the labels and ROIMaps for the validation image are also in ROIMap_Dir and Label_Dir)
+# h) Run scripty
 ##########################################################################################################################################################################
 import tensorflow as tf
 import numpy as np
@@ -23,8 +24,8 @@ import scipy.misc as misc
 Train_Image_Dir="Data_Zoo/Materials_In_Vessels/Train_Images/" # Images and labels for training
 ROIMap_Dir="Data_Zoo/Materials_In_Vessels/VesselLabels/" # Folder where ROI map are save in png format (same name as coresponding image in images folder)
 Label_Dir="Data_Zoo/Materials_In_Vessels/LiquidSolidLabels/"# Annotetion in png format for train images and validation images (assume the name of the images and annotation images are the same (but annotation is always png format))
-UseValidationSet=True# do you want to use validation set in training
-Valid_Image_Dir="Data_Zoo/Materials_In_Vessels/Test_Images_All/"# Validation images that will be used to evaluate training
+UseValidationSet=False# do you want to use validation set in training
+Valid_Image_Dir="Data_Zoo/Materials_In_Vessels/Test_Images_All/"# Validation images that will be used to evaluate training (the ROImap and Labels are in same folder as the training set)
 logs_dir= "logs/"# "path to logs directory where trained model and information will be stored"
 if not os.path.exists(logs_dir): os.makedirs(logs_dir)
 model_path="Model_Zoo/vgg16.npy"# "Path to pretrained vgg16 model for encoder"
@@ -102,7 +103,7 @@ def main(argv=None):
                 f.write("\n"+str(itr)+"\t"+str(TLoss))
                 f.close()
 #......................Write and display Validation Set Loss by running loss on all validation images.....................................................................
-        if UseValidationSet and itr % 1000 == 0:
+        if UseValidationSet and itr % 2000 == 0:
             SumLoss=np.float64(0.0)
             NBatches=np.int(np.ceil(ValidReader.NumFiles/ValidReader.BatchSize))
             print("Calculating Validation on " + str(NBatches) + " Images")
