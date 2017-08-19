@@ -10,7 +10,7 @@
 #    Vgg16 pretrained Model can be download from ftp://mi.eng.cam.ac.uk/pub/mttt2/models/vgg16.npy
 #    or https://drive.google.com/file/d/0B6njwynsu2hXZWcwX0FKTGJKRWs/view?usp=sharing
 # e) Set number of classes number in NUM_CLASSES
-# g) If you are interested in using validation set during training, set UseValidationSet=True and the validation image folder to Valid_Image_Dir (asume that the labels and ROIMaps for the validation image are also in ROIMap_Dir and Label_Dir)
+# g) If you are interested in using validation set during training, set UseValidationSet=True and the validation image folder to Valid_Image_Dir (assume that the labels and ROI maps for the validation image are also in ROIMap_Dir and Label_Dir)
 # h) Run scripty
 ##########################################################################################################################################################################
 import tensorflow as tf
@@ -106,7 +106,7 @@ def main(argv=None):
         if UseValidationSet and itr % 2000 == 0:
             SumLoss=np.float64(0.0)
             NBatches=np.int(np.ceil(ValidReader.NumFiles/ValidReader.BatchSize))
-            print("Calculating Validation on " + str(NBatches) + " Images")
+            print("Calculating Validation on " + str(ValidReader.NumFiles) + " Images")
             for i in range(NBatches):# Go over all validation image
                 Images, ROIMaps,GTLabels= ValidReader.ReadNextBatchClean() # load validation image and ground true labels
                 feed_dict = {image: Images,ROIMap:ROIMaps, GTLabel: GTLabels ,keep_prob: 1.0}
