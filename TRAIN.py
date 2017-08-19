@@ -10,7 +10,7 @@
 #    Vgg16 pretrained Model can be download from ftp://mi.eng.cam.ac.uk/pub/mttt2/models/vgg16.npy
 #    or https://drive.google.com/file/d/0B6njwynsu2hXZWcwX0FKTGJKRWs/view?usp=sharing
 # e) Set number of classes number in NUM_CLASSES
-# g) If you are interested in using validation set during training set UseValidationSet=True and the validation image folder to Valid_Image_Dir (asume that the labels and ROIMaps for the validation image are also in ROIMap_Dir and Label_Dir)
+# g) If you are interested in using validation set during training, set UseValidationSet=True and the validation image folder to Valid_Image_Dir (asume that the labels and ROIMaps for the validation image are also in ROIMap_Dir and Label_Dir)
 # h) Run scripty
 ##########################################################################################################################################################################
 import tensorflow as tf
