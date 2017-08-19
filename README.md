@@ -52,7 +52,7 @@ The input for the net (Figure 1) are RGB image and ROI map the ROI map is a 2d b
 The net produce pixel wise annotation as a matrix in size of the image with the value of each pixel is the pixel label (This should be the input in training).
 
 ## Background information
-The net is based on fully convolutional neural net described in the paper (Fully Convolutional Networks for Semantic Segmentation)[https://arxiv.org/pdf/1605.06211.pdf]. The valve filters were added in first layer.
+The net is based on fully convolutional neural net described in the paper [Fully Convolutional Networks for Semantic Segmentation](https://arxiv.org/pdf/1605.06211.pdf). The valve filters were added in first layer.
 See BuildNetVgg16.py for the network structure. The code is based on 
 https://github.com/shekkizh/FCN.tensorflow by Sarath Shekkizhar with MIT license. The net is based on the pre-trained VGG16 model by Marvin Teichmann
 
