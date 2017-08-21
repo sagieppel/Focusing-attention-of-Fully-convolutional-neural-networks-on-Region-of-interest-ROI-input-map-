@@ -163,17 +163,11 @@ class Data_Reader:
             self.Epoch+=1
         batch_size=np.min([self.BatchSize,self.NumFiles-self.itr])
 
-        Sy=1
-        Sx=1
-
-#-----------Augument Images and labeles-------------------------------------------------------------------
-
-
         for f in range(batch_size):
 ##.............Read image and labels from files.........................................................
-           Img = misc.imread(self.Image_Dir + "/" + self.SFiles[self.itr])
+           Img = misc.imread(self.Image_Dir + "/" + self.OrderedFiles[self.itr])
            Img=Img[:,:,0:3]
-           LabelName=self.SFiles[self.itr][0:-4]+".png"# Assume ROImap name is same as image only with png ending
+           LabelName=self.OrderedFiles[self.itr][0:-4]+".png"# Assume ROImap name is same as image only with png ending
            ROIMap = misc.imread(self.ROIMap_Dir+ "/" + LabelName)
            if self.ReadLabels:
               Label= misc.imread(self.Label_Dir + "/" + LabelName)
@@ -185,7 +179,7 @@ class Data_Reader:
                 ROIMaps = np.zeros([batch_size, Sy, Sx, 1], dtype=np.int)
                 if self.ReadLabels: Labels= np.zeros([batch_size,Sy,Sx,1], dtype=np.int)
 
-#..........Resize and strecth image and labels....................................................................
+#..........Resize image and labels....................................................................
            Img = misc.imresize(Img, [Sy, Sx], interp='bilinear')
            ROIMap = misc.imresize(ROIMap, [Sy, Sx], interp='nearest')
            if self.ReadLabels: Label = misc.imresize(Label, [Sy, Sx], interp='nearest')
