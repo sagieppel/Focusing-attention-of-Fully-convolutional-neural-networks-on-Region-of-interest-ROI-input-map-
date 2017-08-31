@@ -79,7 +79,7 @@ def main(argv=None):
         LabelPred = sess.run(Net.Pred, feed_dict={image: Images, keep_prob: 1.0, ROIMap: ROIMaps})
              #------------------------Save predicted labels overlay on images---------------------------------------------------------------------------------------------
         misc.imsave(Pred_Dir + "/OverLay/"+ FileName+NameEnd  , Overlay.OverLayLabelOnImage(Images[0],LabelPred[0], w)) #Overlay label on image
-        misc.imsave(Pred_Dir + "/Label/" + FileName + NameEnd, LabelPred[0].astype(np.int8))
+        misc.imsave(Pred_Dir + "/Label/" + FileName[:-4]+".png" + NameEnd, LabelPred[0].astype(np.uint8))
         ##################################################################################################################################################
 main()#Run script
 print("Finished")
