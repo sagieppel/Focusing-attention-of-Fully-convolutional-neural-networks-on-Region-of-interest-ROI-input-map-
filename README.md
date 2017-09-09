@@ -1,6 +1,6 @@
 # Focusing attention of Fully convolutional neural networks on Region of interest (ROI) input map, using the valve filters method. 
 This project contains code for a fully convolutional neural network (FCN) for semantic segmentation with a region of interest (ROI) map as an additional input (figure 1). The net receives image and ROI as a binary map with pixels corresponding to ROI marked 1, and produce pixel-wise annotation of the ROI region of the image.  This code was tested on for semantic segmentation task of materials in transparent vessels where the vessel area of the image was set as the ROI. 
-
+The method is discussed in the paper: [Setting an attention region for convolutional neural networks using region selective features, for recognition of materials within glass vessels](https://arxiv.org/abs/1708.08711)
 ![](/Figure1.jpg)
 Figure 1) Convolutional neural nets (Convnet) with ROI map as input
 
