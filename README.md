@@ -56,6 +56,10 @@ The net produce pixel wise annotation as a matrix in size of the image with the 
 The net is based on fully convolutional neural net described in the paper [Fully Convolutional Networks for Semantic Segmentation](https://arxiv.org/pdf/1605.06211.pdf).  The code is based on 
 https://github.com/shekkizh/FCN.tensorflow by Sarath Shekkizhar with encoder  replaced to VGG16. The net is based on the pre-trained VGG16 model by Marvin Teichmann
 
+## Trained Models
+[Trained model Liquid and solid phases recognition in glass vessel](https://mega.nz/#!FaY1AJia!B9_sCt15P5soLLD9sNy6UNN51pMAswxENbwvKazDRfY)
+[Trained model Exact physical phase of materials in transparent vessel semantic segmentation](https://mega.nz/#!se5E3IqQ!b1AZIw6g1qPY5XYJDQA26UxBIMCd8YfeM9mgzpWIPhs)
+
 ## Supporting datasets
 The net was tested on a [dataset of annotated images of materials in glass vessels](https://github.com/sagieppel/Materials-in-Vessels-data-set). The glass vessel region in the image was taken as the ROI map.
 This dataset can be downloaded from  https://drive.google.com/file/d/0B6njwynsu2hXRFpmY1pOV1A4SFE/view?usp=sharing
