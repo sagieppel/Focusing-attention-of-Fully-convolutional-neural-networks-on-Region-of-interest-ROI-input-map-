@@ -4,6 +4,8 @@ The method is discussed in the paper: [Setting an attention region for convoluti
 ![](/Figure1.jpg)
 Figure 1) Convolutional neural nets (Convnet) with ROI map as input
 
+## For newer much stronger models for detecting/segmenting matarials in vessels see:
+https://github.com/sagieppel/Detecting-and-segmenting-and-classifying-materials-inside-vessels-in-images-using-convolutional-net
 
 ## General approach for using ROI input in  CNN (valve filter method)
 Convolutional neural networks have emerged as the leading methods in detection classification and segmentation of images. Many problems in image recognition require the recognition to be performed only on a specific predetermined region of interest (ROI) in the image. One example of such a case is the recognition of the contents of glass vessels such as bottles or jars, where the glassware region in the image is known and given as the ROI input (Figure 1). Directing the attention of a convolutional neural net (CNN) to a given ROI region without loss of background information is a major challenge in this case. This project uses a valve filter approach to focus the attention of a fully convolutional neural net (FCN) on a given ROI in the image. The ROI mask is inserted into the CNN, along with the image in the form of a binary map, with pixels belonging to the ROI set to one and the background set to zero. The processing of the ROI in the net is done using the valve filter approach presented in Figure 2. In general, for each filter that acts on the image, a corresponding valve filter exists that acts on (convolves) the ROI map (Figure 2). The output of the valve filter convolution is multiplied element-wise with the output of the image filter convolution, to give a normalized feature map (Figure 2). This map is used as input for the next layers of the net. In this case, the net is a standard fully convolutional net (FCN) for semantic segmentation (pixel-wise classification). Valve filters can be seen as a kind of valve that regularizes the activation of image filters in different regions of the image. 
@@ -56,10 +58,10 @@ The net produce pixel wise annotation as a matrix in size of the image with the 
 The net is based on fully convolutional neural net described in the paper [Fully Convolutional Networks for Semantic Segmentation](https://arxiv.org/pdf/1605.06211.pdf).  The code is based on 
 https://github.com/shekkizh/FCN.tensorflow by Sarath Shekkizhar with encoder  replaced to VGG16. The net is based on the pre-trained VGG16 model by Marvin Teichmann
 
-## Trained Models
-[Trained model Liquid and solid phases recognition in glass vessel](https://mega.nz/#!FaY1AJia!B9_sCt15P5soLLD9sNy6UNN51pMAswxENbwvKazDRfY)
-
-[Trained model Exact physical phase of materials in transparent vessel semantic segmentation](https://mega.nz/#!se5E3IqQ!b1AZIw6g1qPY5XYJDQA26UxBIMCd8YfeM9mgzpWIPhs)
+## Newer models for segmenring materials in vessels
+For newer much stronger models for detecting/segmenting matarials in vessels see:
+https://github.com/sagieppel/Detecting-and-segmenting-and-classifying-materials-inside-vessels-in-images-using-convolutional-net
+ 
 
 ## Supporting datasets
 The net was tested on a [dataset of annotated images of materials in glass vessels](https://github.com/sagieppel/Materials-in-Vessels-data-set). The glass vessel region in the image was taken as the ROI map.
