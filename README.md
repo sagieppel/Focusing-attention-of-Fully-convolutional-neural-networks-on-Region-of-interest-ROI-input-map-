@@ -4,7 +4,7 @@ The method is discussed in the paper: [Setting an attention region for convoluti
 ![](/Figure1.jpg)
 Figure 1) Convolutional neural nets (Convnet) with ROI map as input
 
-## For newer much stronger models for detecting/segmenting matarials in vessels see:
+## For newer much stronger models for detecting/segmenting matarials in tranaparent vessels see:
 https://github.com/sagieppel/Detecting-and-segmenting-and-classifying-materials-inside-vessels-in-images-using-convolutional-net
 
 ## General approach for using ROI input in  CNN (valve filter method)
